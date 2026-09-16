@@ -4,10 +4,41 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
-    {"source":"/(.*)","headers":[
-      {"key":"X-Content-Type-Options","value":"nosniff"},
-      {"key":"X-Frame-Options","value":"DENY"},
-      {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}
-    ]}
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/sovereign-reset",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/method", "destination": "/regulated-strategy", "permanent": true },
+    { "source": "/method.html", "destination": "/regulated-strategy", "permanent": true },
+    { "source": "/quiz", "destination": "/", "permanent": false },
+    { "source": "/journal", "destination": "/", "permanent": false },
+    { "source": "/meeting-prep", "destination": "/", "permanent": false },
+    { "source": "/sprint", "destination": "/work-with-me", "permanent": false },
+    { "source": "/patterns", "destination": "/blog", "permanent": false },
+    { "source": "/patterns/(.*)", "destination": "/blog", "permanent": false }
   ]
 }
