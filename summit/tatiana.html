@@ -18,9 +18,28 @@
 
   <div class="loader" aria-hidden="true"><div class="loader-mark">N<span>.</span></div></div>
 
-  <header class="nav nav-solo">
+  <header class="nav">
     <div class="nav-inner">
       <a href="../index.html" class="logo" aria-label="Nir Hermelin — home">Nir Hermelin<em>.</em></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../regulated-strategy.html">Regulated Strategy</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>
+          <ul class="submenu" id="wwmSub">
+            <li><a href="../work-with-me.html">Overview</a></li>
+            <li><a href="../clinic.html">The Offer Clinic <span class="sub-meta">90 min · US$89</span></a></li>
+            <li><a href="../session.html">The Next Move Session <span class="sub-meta">90 min &middot; US$275</span></a></li>
+            <li><a href="../lab.html">The Next Move Lab <span class="sub-meta">6 weeks · group</span></a></li>
+            <li><a href="../advisory.html">Regulated Strategy Advisory <span class="sub-meta">12 weeks · 1:1</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
