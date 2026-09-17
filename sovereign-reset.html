@@ -28,10 +28,17 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="blog/index.html">Field Notes</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>
+          <ul class="submenu" id="wwmSub">
+            <li><a href="work-with-me.html">Overview</a></li>
+            <li><a href="clinic.html">The Offer Clinic <span class="sub-meta">90 min · US$89</span></a></li>
+            <li><a href="session.html">The Next Move Session <span class="sub-meta">90 min &middot; US$275</span></a></li>
+            <li><a href="lab.html">The Next Move Lab <span class="sub-meta">6 weeks · group</span></a></li>
+            <li><a href="advisory.html">Regulated Strategy Advisory <span class="sub-meta">12 weeks · 1:1</span></a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="free-reset.html" class="nav-cta">Free Reset</a></li>
       </ul>
     </div>
   </header>
@@ -49,7 +56,7 @@
             <p class="hero-sub"><strong>Regulation as Strategic Leverage</strong> is a free 10-minute embodied reset.</p>
             <p class="hero-sub">It is designed to help you come out of the business problem for a moment, reconnect with the body, and then look again at the move that matters.</p>
             <p class="hero-sub">Not because every business problem is a nervous-system problem. And not because calm is the goal. Sometimes a little more space is enough to see the decision differently.</p>
-            <p class="hero-tagline">Small enough for the nervous system. Real enough for the business.</p>
+            <p class="hero-tagline">Ambitious enough for the business. Safe enough for the nervous system.</p>
             <div class="hero-ctas">
               <!-- TODO(Nir): replace # with the exact Gumroad URL -->
               <a href="#" class="btn btn-primary btn-lg" data-gumroad>Download the free 10-minute reset <span class="arrow" aria-hidden="true">→</span></a>
@@ -100,11 +107,11 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-anchor">Small enough for the nervous system. Real enough for the business.</p>
+      <p class="footer-anchor">Ambitious enough for the business. Safe enough for the nervous system.</p>
       <div class="footer-grid">
         <div>
           <a href="index.html" class="logo">Nir Hermelin<em>.</em></a>
-          <p class="footer-about" style="margin-top:1rem;">Business strategy. Nervous system included. AI on the desk.</p>
+          <p class="footer-about" style="margin-top:1rem;">Business strategy, nervous system + inner work included. AI always supporting.</p>
         </div>
         <nav aria-label="Footer navigation">
           <h4>Explore</h4>
@@ -113,8 +120,10 @@
             <li><a href="about.html">About</a></li>
             <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
             <li><a href="work-with-me.html">Work With Me</a></li>
-            <li><a href="blog/index.html">Field Notes</a></li>
-            <li><a href="free-reset.html">Free Reset</a></li>
+            <li><a href="clinic.html">— The Offer Clinic</a></li>
+            <li><a href="session.html">— The Next Move Session</a></li>
+            <li><a href="lab.html">— The Next Move Lab</a></li>
+            <li><a href="advisory.html">— Regulated Strategy Advisory</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -130,7 +139,7 @@
           <h4>Sessions</h4>
           <ul>
             <li><span style="color:var(--dark-muted); font-size:0.95rem;">Online, worldwide.</span></li>
-            <li><span style="color:var(--dark-muted); font-size:0.95rem;">Based on Koh Phangan, Thailand.</span></li>
+            <li><span style="color:var(--dark-muted); font-size:0.95rem;">South Africa &middot; Hong Kong &middot; Israel &middot; Thailand</span></li>
           </ul>
         </div>
       </div>

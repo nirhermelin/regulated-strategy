@@ -395,14 +395,16 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.85fr;
+  grid-template-columns: 1.35fr 0.65fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-photo-col { order: -1; max-width: 380px; }
+  .hero-photo-col { order: -1; max-width: 300px; }
 }
+
+.hero-photo-col { max-width: 340px; margin-left: auto; }
 
 .hero h1 { margin: 0.75rem 0 1.5rem; max-width: 16ch; }
 

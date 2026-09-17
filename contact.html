@@ -27,10 +27,17 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="blog/index.html">Field Notes</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>
+          <ul class="submenu" id="wwmSub">
+            <li><a href="work-with-me.html">Overview</a></li>
+            <li><a href="clinic.html">The Offer Clinic <span class="sub-meta">90 min · US$89</span></a></li>
+            <li><a href="session.html">The Next Move Session <span class="sub-meta">90 min &middot; US$275</span></a></li>
+            <li><a href="lab.html">The Next Move Lab <span class="sub-meta">6 weeks · group</span></a></li>
+            <li><a href="advisory.html">Regulated Strategy Advisory <span class="sub-meta">12 weeks · 1:1</span></a></li>
+          </ul>
+        </li>
         <li><a href="contact.html" aria-current="page">Contact</a></li>
-        <li><a href="free-reset.html" class="nav-cta">Free Reset</a></li>
       </ul>
     </div>
   </header>
@@ -80,20 +87,10 @@
             </a>
             <div class="contact-card reveal" style="--d:0.2s">
               <span class="cc-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
-              <span><strong>Sessions</strong><span>Online, worldwide. Based on Koh Phangan, Thailand.</span></span>
+              <span><strong>Sessions</strong><span>Online, worldwide. South Africa &middot; Hong Kong &middot; Israel &middot; Thailand.</span></span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="cta-band field" aria-labelledby="contact-cta">
-      <div class="container">
-        <p class="eyebrow reveal" style="justify-content:center;">Not ready to write yet?</p>
-        <h2 id="contact-cta" class="reveal">Try the nervous-system part first.</h2>
-        <p class="muted reveal" style="--d:0.1s; max-width:50ch;">A free 10-minute embodied reset. Then look again at the business move that matters.</p>
-        <a href="free-reset.html" class="btn btn-primary btn-lg reveal" style="--d:0.15s">Get the free reset <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -102,11 +99,11 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-anchor">Small enough for the nervous system. Real enough for the business.</p>
+      <p class="footer-anchor">Ambitious enough for the business. Safe enough for the nervous system.</p>
       <div class="footer-grid">
         <div>
           <a href="index.html" class="logo">Nir Hermelin<em>.</em></a>
-          <p class="footer-about" style="margin-top:1rem;">Business strategy. Nervous system included. AI on the desk.</p>
+          <p class="footer-about" style="margin-top:1rem;">Business strategy, nervous system + inner work included. AI always supporting.</p>
         </div>
         <nav aria-label="Footer navigation">
           <h4>Explore</h4>
@@ -115,8 +112,10 @@
             <li><a href="about.html">About</a></li>
             <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
             <li><a href="work-with-me.html">Work With Me</a></li>
-            <li><a href="blog/index.html">Field Notes</a></li>
-            <li><a href="free-reset.html">Free Reset</a></li>
+            <li><a href="clinic.html">— The Offer Clinic</a></li>
+            <li><a href="session.html">— The Next Move Session</a></li>
+            <li><a href="lab.html">— The Next Move Lab</a></li>
+            <li><a href="advisory.html">— Regulated Strategy Advisory</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -132,7 +131,7 @@
           <h4>Sessions</h4>
           <ul>
             <li><span style="color:var(--dark-muted); font-size:0.95rem;">Online, worldwide.</span></li>
-            <li><span style="color:var(--dark-muted); font-size:0.95rem;">Based on Koh Phangan, Thailand.</span></li>
+            <li><span style="color:var(--dark-muted); font-size:0.95rem;">South Africa &middot; Hong Kong &middot; Israel &middot; Thailand</span></li>
           </ul>
         </div>
       </div>

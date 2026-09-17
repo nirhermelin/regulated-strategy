@@ -23,7 +23,7 @@ h1, .display {
   line-height: 1.05;
 }
 h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
-.hero h1 { max-width: 14ch; margin: 0.9rem 0 1.6rem; text-wrap: balance; }
+.hero h1 { max-width: 22ch; margin: 0.9rem 0 1.6rem; }
 h1 em, h2 em, .display em { font-style: italic; color: var(--copper); font-weight: 400; }
 h2 { text-wrap: balance; }
 .h2-serif { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; }
@@ -102,10 +102,14 @@ h2 { text-wrap: balance; }
   padding: clamp(4rem, 8vw, 7rem) 0;
 }
 .principle .display {
-  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
-  max-width: 22ch;
+  font-size: clamp(1.5rem, 4.2vw, 3.2rem);
+  max-width: none;
   margin: 0 auto 1.75rem;
-  line-height: 1.12;
+  line-height: 1.15;
+}
+.tagline-line { white-space: nowrap; }
+@media (max-width: 560px) {
+  .tagline-line { white-space: normal; }
 }
 .principle p { margin-inline: auto; }
 .principle-pair {
@@ -501,7 +505,7 @@ h2 { text-wrap: balance; }
 /* ---------- Small screens: tighter hero ---------- */
 @media (max-width: 480px) {
   h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
-  .hero h1 { max-width: 12ch; }
+  .hero h1 { max-width: 18ch; }
   .principle .display { font-size: 1.75rem; }
   .offer { padding: 1.75rem 1.5rem; }
   .lens-panel { min-height: 0; }
@@ -519,3 +523,307 @@ h2 { text-wrap: balance; }
   .hero-kicker { gap: 0.35rem 1rem; }
   .hero-kicker span + span::before { display: none; }
 }
+
+/* ============================================================
+   NAV DROPDOWN — Work With Me submenu (Session / Lab / Advisory)
+   Desktop: hover + focus reveal. Mobile: indented sublist.
+   ============================================================ */
+.has-sub { position: relative; }
+.has-sub > .sub-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+.has-sub > .sub-toggle:hover,
+.has-sub.is-current > .sub-toggle { color: var(--text); }
+.has-sub > .sub-toggle .caret {
+  width: 0.5rem; height: 0.5rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.3s var(--ease);
+}
+.has-sub:hover > .sub-toggle .caret,
+.has-sub:focus-within > .sub-toggle .caret { transform: rotate(225deg) translateY(-1px); }
+
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 230px;
+  padding: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-organic, 14px 16px 15px 13px);
+  box-shadow: var(--shadow-lift);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  z-index: 130;
+}
+.submenu::before {
+  /* hover bridge so the menu doesn't close in the gap */
+  content: "";
+  position: absolute;
+  top: -0.75rem; left: 0; right: 0; height: 0.75rem;
+}
+.has-sub:hover > .submenu,
+.has-sub:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.submenu li { display: block; }
+.submenu a {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.3;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.submenu a::after { display: none; }
+.submenu a:hover,
+.submenu a:focus,
+.submenu a[aria-current="page"] {
+  background: rgba(184, 134, 46, 0.09);
+  color: var(--text);
+}
+.submenu a .sub-meta {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--copper);
+  margin-top: 0.15rem;
+}
+
+/* Mobile: dropdown becomes an indented sublist in the overlay */
+@media (max-width: 900px) {
+  .has-sub > .sub-toggle {
+    font-size: 1.5rem;
+    font-family: var(--font-head);
+    color: var(--text);
+    justify-content: center;
+  }
+  .has-sub > .sub-toggle .caret { display: none; }
+  .submenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    min-width: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0.75rem 0 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .submenu::before { display: none; }
+  .submenu a {
+    font-size: 1.05rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 0.25rem;
+  }
+  .submenu a .sub-meta { display: none; }
+}
+
+/* ---------- Hero trio (Business · Nervous system · AI — bigger, visual) ---------- */
+.hero-trio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  margin-bottom: 1.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-style: italic;
+  color: var(--copper);
+}
+.hero-trio span { position: relative; }
+.hero-trio span + span::before {
+  content: "";
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  vertical-align: middle;
+  margin-right: 1.1rem;
+  margin-left: 0;
+  opacity: 0.7;
+}
+@media (max-width: 560px) {
+  .hero-trio { font-size: 1.05rem; gap: 0.3rem 0.9rem; }
+}
+
+/* ---------- Underlined word (hand-line under a single word, e.g. "real") ---------- */
+.ul-word {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.ul-word .hand-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  width: 100%;
+  height: 0.4em;
+  margin: 0;
+  display: block;
+}
+/* the underline path animates via the existing .drawn / .in-view rules */
+
+/* ---------- Highlight (marker) for a key phrase ---------- */
+mark {
+  background: linear-gradient(180deg, transparent 68%, rgba(184, 134, 46, 0.30) 68%);
+  color: inherit;
+  padding: 0 0.05em;
+  border-radius: 2px;
+}
+
+/* ---------- Gap punch line ---------- */
+.gap-punch {
+  margin-top: 1.5rem;
+  padding-left: 1.1rem;
+  border-left: 2.5px solid var(--copper);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* ---------- Ways to work: 2-up groups + group labels ---------- */
+.offers.offers-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .offers.offers-2 { grid-template-columns: 1fr; } }
+.ways-group-label {
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Nervous-system bullet points (dark band) ---------- */
+.ns-points {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.ns-points li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--dark-text, #f0e9db);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+.ns-points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.6em;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+/* ---------- Smaller sub-line inside a big H1 (About hero third line) ---------- */
+.h1-sub {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.5em;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--muted);
+}
+.h1-sub em { color: var(--copper); font-style: italic; }
+
+/* ---------- Stage examples (the little real stories) ---------- */
+.seven-item .lens-eg {
+  margin-top: 0.9rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(168, 104, 63, 0.35);
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ---------- Offer card: meta line as a top label ---------- */
+.offer .offer-meta {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 0.5rem;
+}
+.offer .offer-meta .price { color: var(--text); letter-spacing: 0; }
+.offer h3 { margin-bottom: 0.6rem; }
+
+/* ---------- Enquiry CTA group (mailto + copy buttons) ---------- */
+.enquire-group { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1.5rem; }
+.btn-copy {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.btn-copy:hover { border-color: var(--amber); color: var(--text); }
+.btn-copy svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+
+/* ---------- Testimonials ---------- */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+@media (max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-organic);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.testi-quote {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 1.1rem;
+}
+.testi-who { margin-top: auto; }
+.testi-name { font-family: var(--font-head); font-weight: 600; font-size: 0.95rem; color: var(--text); }
+.testi-role { font-size: 0.85rem; color: var(--copper); margin-top: 0.15rem; }
+.offer-book-note { color: var(--muted); max-width: 54ch; }
+.offer-book-note strong { color: var(--text); }

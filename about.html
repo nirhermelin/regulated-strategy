@@ -25,12 +25,19 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="blog/index.html">Field Notes</a></li>
+        <li class="has-sub">
+          <button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>
+          <ul class="submenu" id="wwmSub">
+            <li><a href="work-with-me.html">Overview</a></li>
+            <li><a href="clinic.html">The Offer Clinic <span class="sub-meta">90 min · US$89</span></a></li>
+            <li><a href="session.html">The Next Move Session <span class="sub-meta">90 min &middot; US$275</span></a></li>
+            <li><a href="lab.html">The Next Move Lab <span class="sub-meta">6 weeks · group</span></a></li>
+            <li><a href="advisory.html">Regulated Strategy Advisory <span class="sub-meta">12 weeks · 1:1</span></a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="free-reset.html" class="nav-cta">Free Reset</a></li>
       </ul>
     </div>
   </header>
@@ -42,13 +49,11 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-inner">
-            <p class="eyebrow">About Nir</p>
-            <h1>I like businesses.<br>I like bodies.<br>I like <em>difficult questions.</em></h1>
+            <h1>I like business.<br>I like the inner world.<br><span class="h1-sub">I want to <em>stop pretending</em> they belong in separate conversations.</span></h1>
             <svg class="hand-line drawn" viewBox="0 0 220 14" aria-hidden="true"><path d="M2 9 C 40 2, 70 12, 110 7 S 180 2, 218 8"/></svg>
-            <p class="hero-sub">And, increasingly, I like what happens when we stop pretending they belong in separate conversations.</p>
           </div>
           <div class="hero-photo-col">
-            <div class="hero-photo"><div class="photo-ph ph-portrait"><span>Nir, relaxed, island context</span></div></div>
+            <div class="hero-photo"><img src="images/nir-profile.jpg" alt="Nir Hermelin" width="800" height="800" loading="eager" style="width:100%;height:auto;"></div>
           </div>
         </div>
       </div>
@@ -57,69 +62,51 @@
     <!-- ============ SHORT VERSION ============ -->
     <section class="section-alt" aria-labelledby="short-heading">
       <div class="container-narrow">
-        <p class="eyebrow reveal">The short version</p>
-        <h2 id="short-heading" class="reveal">Systems, logic, and how things work. Then people.</h2>
+        <h2 id="short-heading" class="reveal">Business life: the short version.</h2>
         <p class="muted reveal" style="--d:0.1s">
-          I was born in Israel and grew up in South Africa. I studied electronic engineering because I genuinely like
-          systems, logic and understanding how things work. Later came an MBA, years in strategy, marketing and
-          consulting, building companies, advising founders and working inside businesses where decisions have actual
-          consequences.
+          I studied engineering because I like systems, logic and understanding how things work. Later came an MBA, then
+          some London Business School, and then years in strategy, marketing and consulting: building companies and
+          advising founders where decisions have real consequences.
         </p>
-        <br>
-        <p class="muted reveal" style="--d:0.15s">
-          I also became a musician. Not as a hobby tucked politely after work. Music became another way of understanding
-          people. I’ve played and facilitated experiences where a room can move from guarded to open without anyone
-          explaining a framework first.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============ BUSINESS SIDE ============ -->
-    <section aria-labelledby="biz-heading">
-      <div class="container">
-        <div class="split split-wide-text">
-          <div>
-            <p class="eyebrow reveal">The business side</p>
-            <h2 id="biz-heading" class="reveal">I still do real commercial work. I like that.</h2>
-            <p class="muted reveal" style="--d:0.1s">
-              My career has moved through technology, consulting, marketing, entrepreneurship and leadership. I’ve worked
-              with founders and organisations on positioning, offers, marketing, operations, teams and growth. I co-founded
-              a startup and learned the less glamorous version of entrepreneurship too: raising money, building a team,
-              making bets, getting things wrong, and discovering that knowing a lot about business does not exempt you
-              from being human.
-            </p>
-            <br>
-            <p class="muted reveal" style="--d:0.15s">
-              It keeps this practice attached to the world where someone eventually has to choose a price, ship the page,
-              make the hire or have the conversation.
-            </p>
-          </div>
-          <div class="reveal" style="--d:0.2s">
-            <div class="photo-ph ph-portrait"><span>Nir, business / work context</span></div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- ============ THE PART THAT DOESN'T FIT ON LINKEDIN ============ -->
     <section class="band-dark" aria-labelledby="ns-heading">
       <div class="container-narrow">
-        <p class="eyebrow reveal">Then there’s the part that doesn’t fit neatly on LinkedIn</p>
+        <p class="eyebrow reveal">The part that doesn’t fit neatly on LinkedIn</p>
         <h2 id="ns-heading" class="reveal">My own nervous system has not been a theoretical interest.</h2>
         <p class="muted reveal" style="--d:0.1s">
-          Childhood experiences, health and body pain, intimacy, attachment, work, control, achievement and relationships
-          have all met each other in fairly inconvenient ways.
+          Various childhood abuse and trauma brought me into years of trauma-aware and somatic work. It’s also what led me
+          to facilitate workshops and experiences on embodiment, boundaries and intimacy. Health and chronic pain,
+          attachment, control and achievement have all met each other in fairly inconvenient ways.
+        </p>
+        <br>
+        <p class="muted reveal" style="--d:0.15s">I don’t claim everyone’s business problem is childhood trauma. It isn’t. But I know from the inside what it’s like when:</p>
+        <ul class="ns-points reveal" style="--d:0.2s">
+          <li>you understand a strategy perfectly, and</li>
+          <li>a part of you still won’t let you do it, because once… it just wasn’t safe to.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BUSINESS SIDE ============ -->
+    <section aria-labelledby="biz-heading">
+      <div class="container-narrow">
+        <h2 id="biz-heading" class="reveal">I still do real commercial work.</h2>
+        <p class="muted reveal" style="--d:0.1s">
+          Besides my business coaching, with nervous-system and inner work included, I stay attached to real commerce.
         </p>
         <br>
         <p class="muted reveal" style="--d:0.15s">
-          I’ve spent years in trauma-aware and somatic work, including inner-child work, embodiment, nervous-system
-          practice and relational work. I’ve also facilitated workshops and experiences in these worlds.
+          I’m currently the head of marketing (fractional) of a startup growing 200% year on year, ALTIUS.capital.
         </p>
         <br>
-        <p class="reveal" style="--d:0.2s; font-family:var(--font-serif); font-size:1.25rem; line-height:1.5;">
-          I don’t use my story to claim that everyone’s business problem is childhood trauma. It isn’t. But I know from
-          the inside what it is like when an intelligent adult understands something perfectly and another part of them
-          is still protecting an older reality.
+        <p class="muted reveal" style="--d:0.2s">
+          I also previously co-founded a startup, and learned the less glamorous version too: we raised a million dollars,
+          built a team of 16, made bets, got things wrong. Knowing a lot about business doesn’t exempt you from being
+          human. It keeps this work attached to the world where someone eventually has to choose a price, ship the page or
+          have the conversation.
         </p>
       </div>
     </section>
@@ -129,20 +116,18 @@
       <div class="container">
         <div class="split">
           <div class="reveal">
-            <div class="photo-ph ph-landscape"><span>Guitar, on stage or mid-performance</span></div>
+            <img src="images/nir-guitar.jpg" alt="Nir playing guitar" width="794" height="1059" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-organic);">
           </div>
           <div>
-            <p class="eyebrow reveal">Music is part of this too</p>
             <h2 id="music-heading" class="reveal">What sound can do before language gets involved.</h2>
             <p class="muted reveal" style="--d:0.1s">
-              I’m an award-winning fingerstyle guitarist and I’ve used music in concerts, ecstatic-dance spaces and inner
-              journeys. I’m fascinated by what sound can do before language gets involved: activation, settling, emotion,
-              connection, permission.
+              I’m an award-winning fingerstyle guitarist. I’m fascinated by what sound does before language gets involved:
+              activation, settling, emotion, connection, permission.
             </p>
             <br>
             <p class="muted reveal" style="--d:0.15s">
-              That part of me belongs here. Not because your pricing strategy needs a guitar solo, but because I don’t
-              think humans become more useful when we cut them into business, body, relationship and creativity.
+              That part of me belongs here too. I don’t think humans become more useful when we cut them into business,
+              body, relationship and creativity.
             </p>
             <p class="reveal" style="--d:0.2s; margin-top:1.25rem;"><a href="https://www.nirmusic.com" target="_blank" rel="noopener" class="u-link" style="font-family:var(--font-head); font-weight:600;">NirMusic →</a></p>
           </div>
@@ -152,41 +137,38 @@
 
     <!-- ============ AI ============ -->
     <section class="section-alt" aria-labelledby="ai-heading">
-      <div class="container-narrow">
-        <span class="ai-badge reveal"><span class="pulse-dot" aria-hidden="true"></span> Used daily. Not a bonus module.</span>
-        <h2 id="ai-heading" class="reveal" style="margin-top:1.25rem;">And then I became slightly obsessed with AI.</h2>
-        <p class="muted reveal" style="--d:0.1s">
-          I use AI every day. To think, research, challenge ideas, build systems, turn conversations into useful material,
-          create content, rehearse difficult conversations and get work out of my head and into the world.
-        </p>
-        <br>
-        <p class="muted reveal" style="--d:0.15s">
-          I love it enough that I want to work with people who are curious about it too. You don’t need to be technical.
-          You do need to be willing to use a capable paid AI tool as a serious working partner.
-        </p>
-        <br>
-        <p class="reveal" style="--d:0.2s; font-family:var(--font-serif); font-size:1.3rem; line-height:1.45;">
-          The interesting question for me is not AI versus humanity. It is: <em style="color:var(--copper);">what should the
-          machine carry, so the human can be more present for the part only a human can do?</em>
-        </p>
+      <div class="container">
+        <div class="split split-wide-text">
+          <div>
+            <span class="ai-badge reveal"><span class="pulse-dot" aria-hidden="true"></span> Used daily. Not a bonus module.</span>
+            <h2 id="ai-heading" class="reveal" style="margin-top:1.25rem;">And then I became slightly obsessed with AI.</h2>
+            <p class="muted reveal" style="--d:0.1s">
+              I use it every day: to think, build, rehearse difficult conversations and get work out of my head and into
+              the world. I even analyse the transcripts of sessions with my own therapist. You don’t need to be technical.
+              You do need to be willing to use it as a serious working partner.
+            </p>
+            <br>
+            <p class="reveal" style="--d:0.2s; font-family:var(--font-serif); font-size:1.3rem; line-height:1.45;">
+              The question I keep asking: <em style="color:var(--copper);">what can I let AI do, so that I, as a human, can be more present?</em>
+            </p>
+          </div>
+          <div class="reveal" style="--d:0.2s">
+            <img src="images/nir-ai.jpg" alt="AI-rendered portrait of Nir Hermelin" width="900" height="900" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-organic);">
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ REGULATED STRATEGY ORIGIN ============ -->
     <section aria-labelledby="origin-heading">
       <div class="container-narrow">
-        <p class="eyebrow reveal">Regulated Strategy</p>
         <h2 id="origin-heading" class="reveal">It came from putting the lives back together.</h2>
         <div class="principle-pair reveal" style="--d:0.1s; margin-top:1.5rem; grid-template-columns:1fr; gap:0.75rem;">
-          <p><strong>Business strategy without the person</strong> can become a beautiful plan nobody executes.</p>
-          <p><strong>Nervous-system work without the business</strong> can create insight without movement.</p>
-          <p><strong>AI without judgement</strong> can produce an extraordinary amount of very polished avoidance.</p>
+          <p><strong>Strategy without the person</strong> becomes a beautiful plan nobody executes.</p>
+          <p><strong>Nervous-system work without the business</strong> creates insight without movement.</p>
+          <p><strong>AI without judgement</strong> produces a lot of very polished avoidance.</p>
         </div>
         <p class="reveal" style="--d:0.15s; margin-top:1.75rem; font-family:var(--font-serif); font-size:1.3rem;">I want all three in the room.</p>
-        <p class="muted reveal" style="--d:0.2s; margin-top:0.75rem;">
-          Make the strategy better. Notice what happens when it becomes real. Use technology to reduce unnecessary
-          friction. Then take a step that matters.
-        </p>
         <p class="reveal" style="--d:0.25s; margin-top:1.5rem;"><a href="regulated-strategy.html" class="u-link" style="font-family:var(--font-head); font-weight:600;">The seven lenses →</a></p>
       </div>
     </section>
@@ -194,14 +176,12 @@
     <!-- ============ CV STRIP ============ -->
     <section class="section-alt" aria-labelledby="cv-heading">
       <div class="container">
-        <p class="eyebrow reveal">The CV version</p>
         <h2 id="cv-heading" class="reveal" style="font-size:clamp(1.5rem,2.6vw,2rem);">For those who like it on one line.</h2>
         <div class="exp-strip reveal" style="--d:0.1s">
           <span>BSc Electronic Engineering</span>
           <span>MBA</span>
           <span>15+ years across technology, strategy, marketing and consulting</span>
           <span>Startup founder</span>
-          <span>Senior / fractional marketing leadership</span>
           <span>Coach and facilitator</span>
           <span>Award-winning fingerstyle guitarist</span>
           <span>AI educator and practitioner</span>
@@ -218,7 +198,6 @@
         <p class="muted reveal" style="--d:0.1s; max-width:52ch;">If there’s a business move that matters and something keeps getting complicated around it, that’s a good place to start.</p>
         <div class="hero-ctas reveal" style="--d:0.15s; justify-content:center;">
           <a href="work-with-me.html" class="btn btn-primary btn-lg">See ways to work with me <span class="arrow" aria-hidden="true">→</span></a>
-          <a href="free-reset.html" class="btn btn-ghost btn-lg">Try the free reset</a>
         </div>
       </div>
     </section>
@@ -228,11 +207,11 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-anchor">Small enough for the nervous system. Real enough for the business.</p>
+      <p class="footer-anchor">Ambitious enough for the business. Safe enough for the nervous system.</p>
       <div class="footer-grid">
         <div>
           <a href="index.html" class="logo">Nir Hermelin<em>.</em></a>
-          <p class="footer-about" style="margin-top:1rem;">Business strategy. Nervous system included. AI on the desk.</p>
+          <p class="footer-about" style="margin-top:1rem;">Business strategy, nervous system + inner work included. AI always supporting.</p>
         </div>
         <nav aria-label="Footer navigation">
           <h4>Explore</h4>
@@ -241,8 +220,10 @@
             <li><a href="about.html">About</a></li>
             <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
             <li><a href="work-with-me.html">Work With Me</a></li>
-            <li><a href="blog/index.html">Field Notes</a></li>
-            <li><a href="free-reset.html">Free Reset</a></li>
+            <li><a href="clinic.html">— The Offer Clinic</a></li>
+            <li><a href="session.html">— The Next Move Session</a></li>
+            <li><a href="lab.html">— The Next Move Lab</a></li>
+            <li><a href="advisory.html">— Regulated Strategy Advisory</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -258,7 +239,7 @@
           <h4>Sessions</h4>
           <ul>
             <li><span style="color:var(--dark-muted); font-size:0.95rem;">Online, worldwide.</span></li>
-            <li><span style="color:var(--dark-muted); font-size:0.95rem;">Based on Koh Phangan, Thailand.</span></li>
+            <li><span style="color:var(--dark-muted); font-size:0.95rem;">South Africa &middot; Hong Kong &middot; Israel &middot; Thailand</span></li>
           </ul>
         </div>
       </div>

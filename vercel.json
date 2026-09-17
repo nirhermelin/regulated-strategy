@@ -23,6 +23,18 @@
       ]
     },
     {
+      "source": "/free-reset",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/summit/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
@@ -38,7 +50,15 @@
     { "source": "/journal", "destination": "/", "permanent": false },
     { "source": "/meeting-prep", "destination": "/", "permanent": false },
     { "source": "/sprint", "destination": "/work-with-me", "permanent": false },
-    { "source": "/patterns", "destination": "/blog", "permanent": false },
-    { "source": "/patterns/(.*)", "destination": "/blog", "permanent": false }
+    { "source": "/blog", "destination": "/", "permanent": false },
+    { "source": "/blog/(.*)", "destination": "/", "permanent": false },
+    { "source": "/patterns", "destination": "/", "permanent": false },
+    { "source": "/patterns/(.*)", "destination": "/", "permanent": false },
+    { "source": "/next-move-session", "destination": "/session", "permanent": true },
+    { "source": "/next-move-lab", "destination": "/lab", "permanent": true },
+    { "source": "/regulated-strategy-advisory", "destination": "/advisory", "permanent": true },
+    { "source": "/work-with-me/session", "destination": "/session", "permanent": true },
+    { "source": "/work-with-me/lab", "destination": "/lab", "permanent": true },
+    { "source": "/work-with-me/advisory", "destination": "/advisory", "permanent": true }
   ]
 }

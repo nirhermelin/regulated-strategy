@@ -47,6 +47,35 @@
     });
   }
 
+  /* ---------- Nav dropdown (Work With Me submenu) ---------- */
+  var mqDesktop = window.matchMedia("(min-width: 901px)");
+  document.querySelectorAll(".has-sub").forEach(function (item) {
+    var subToggle = item.querySelector(".sub-toggle");
+    if (!subToggle) return;
+
+    // On desktop, hover/focus is handled by CSS. The button click on desktop
+    // goes to the overview page; on mobile it expands the sublist in place.
+    subToggle.addEventListener("click", function (e) {
+      if (mqDesktop.matches) {
+        // Desktop: clicking the label goes to the overview page.
+        window.location.href = item.querySelector(".submenu a").getAttribute("href");
+      }
+      // Mobile: the sublist is already shown in the overlay, so do nothing.
+    });
+
+    // Desktop keyboard: open on ArrowDown, close on Escape.
+    subToggle.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" && mqDesktop.matches) {
+        e.preventDefault();
+        var first = item.querySelector(".submenu a");
+        if (first) first.focus();
+      }
+    });
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { subToggle.focus(); item.classList.remove("sub-open"); }
+    });
+  });
+
   /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
@@ -258,6 +287,27 @@
       item.classList.toggle("open", !isOpen);
       q.setAttribute("aria-expanded", String(!isOpen));
       a.style.maxHeight = isOpen ? null : a.scrollHeight + "px";
+    });
+  });
+
+  /* ---------- Copy to clipboard (email / subject buttons) ---------- */
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy");
+      var done = function () {
+        var label = btn.querySelector(".copy-label") || btn;
+        var original = label.textContent;
+        label.textContent = "Copied ✓";
+        setTimeout(function () { label.textContent = original; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, done);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta); done();
+      }
     });
   });
 
