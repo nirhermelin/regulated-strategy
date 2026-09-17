@@ -613,7 +613,7 @@ h2 { text-wrap: balance; }
 /* Mobile: dropdown becomes an indented sublist in the overlay */
 @media (max-width: 900px) {
   .has-sub > .sub-toggle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: var(--font-head);
     color: var(--text);
     justify-content: center;

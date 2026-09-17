@@ -353,31 +353,34 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .nav-links {
     position: fixed;
     inset: 0;
-    background: rgba(250, 246, 239, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #faf6ef;
     flex-direction: column;
-    justify-content: center;
-    gap: 2.2rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6rem 1.5rem 3rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translateX(100%);
-    transition: transform 0.5s var(--ease);
+    transition: transform 0.4s var(--ease);
     z-index: 110;
   }
   .nav-links.open { transform: translateX(0); }
-  .nav-links a { font-size: 1.5rem; font-family: var(--font-head); color: var(--text); }
+  .nav-links a { font-size: 1.4rem; font-family: var(--font-head); color: var(--text); }
   .nav-links li {
     opacity: 0;
     transform: translateY(14px);
     transition: opacity 0.4s ease, transform 0.4s var(--ease);
+    text-align: center;
   }
   .nav-links.open li { opacity: 1; transform: translateY(0); }
-  .nav-links.open li:nth-child(1) { transition-delay: 0.08s; }
-  .nav-links.open li:nth-child(2) { transition-delay: 0.14s; }
-  .nav-links.open li:nth-child(3) { transition-delay: 0.2s; }
-  .nav-links.open li:nth-child(4) { transition-delay: 0.26s; }
-  .nav-links.open li:nth-child(5) { transition-delay: 0.32s; }
-  .nav-links.open li:nth-child(6) { transition-delay: 0.38s; }
-  .nav-links.open li:nth-child(7) { transition-delay: 0.44s; }
+  .nav-links.open li:nth-child(1) { transition-delay: 0.05s; }
+  .nav-links.open li:nth-child(2) { transition-delay: 0.09s; }
+  .nav-links.open li:nth-child(3) { transition-delay: 0.13s; }
+  .nav-links.open li:nth-child(4) { transition-delay: 0.17s; }
+  .nav-links.open li:nth-child(5) { transition-delay: 0.21s; }
+  .nav-links.open li:nth-child(6) { transition-delay: 0.25s; }
+  .nav-links.open li:nth-child(7) { transition-delay: 0.29s; }
   body.menu-open { overflow: hidden; }
 }
 
