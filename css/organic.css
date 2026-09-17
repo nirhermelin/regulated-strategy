@@ -827,3 +827,130 @@ mark {
 .testi-role { font-size: 0.85rem; color: var(--copper); margin-top: 0.15rem; }
 .offer-book-note { color: var(--muted); max-width: 54ch; }
 .offer-book-note strong { color: var(--text); }
+
+/* ---------- Logo lockup (badge + wordmark) ---------- */
+.logo-lockup { display: inline-flex; align-items: center; gap: 0.6rem; }
+.logo-badge { height: 30px; width: auto; display: block; }
+@media (max-width: 560px) { .logo-badge { height: 26px; } }
+
+/* ---------- "What I do" line (below hero) ---------- */
+.whatido { padding: 1rem 0 3rem; }
+.whatido-line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 34ch;
+}
+.whatido-line strong { color: var(--copper); font-weight: 500; }
+
+/* ---------- Business / Nervous system / AI visual ---------- */
+.bnsai { padding: 2rem 0 3.5rem; }
+.bnsai-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+@media (max-width: 760px) {
+  .bnsai-wrap { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+}
+.bnsai-svg { width: 100%; height: auto; overflow: visible; }
+.bnsai-ring { transform-origin: 230px 185px; animation: bnsaiSpin 30s linear infinite; }
+@keyframes bnsaiSpin { to { transform: rotate(360deg); } }
+.bnsai-c1, .bnsai-c2 { animation: bnsaiPulse 5s ease-in-out infinite; transform-origin: center; }
+.bnsai-c2 { animation-delay: 2.5s; }
+@keyframes bnsaiPulse { 0%,100% { fill-opacity: 0.10; } 50% { fill-opacity: 0.20; } }
+.bnsai-dot { animation: bnsaiDot 5s ease-in-out infinite; }
+@keyframes bnsaiDot { 0%,100% { r: 4; opacity: .6; } 50% { r: 7; opacity: 1; } }
+.bnsai-l { font-family: var(--font-head); font-size: 15px; font-weight: 500; }
+.bnsai-ai { font-family: var(--font-head); font-size: 13px; font-weight: 600; letter-spacing: 3px; fill: var(--amber); }
+.bnsai-caption h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin: 0.5rem 0 1rem; line-height: 1.2; }
+.bnsai-caption h2 em { font-style: italic; color: var(--copper); }
+.bnsai-caption .muted { max-width: 42ch; }
+@media (prefers-reduced-motion: reduce) {
+  .bnsai-ring, .bnsai-c1, .bnsai-c2, .bnsai-dot { animation: none; }
+}
+
+/* ---------- Hero living-visual canvas (behind the photo, right side) ---------- */
+.hero-viz { position: relative; overflow: hidden; }
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+  -webkit-mask-image: radial-gradient(85% 85% at 72% 50%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(85% 85% at 72% 50%, #000 60%, transparent 100%);
+}
+.hero-viz .container { position: relative; z-index: 1; }
+@media (max-width: 900px) {
+  .hero-canvas { width: 100%; opacity: 0.35; -webkit-mask-image: radial-gradient(80% 60% at 50% 30%, #000 50%, transparent 100%); mask-image: radial-gradient(80% 60% at 50% 30%, #000 50%, transparent 100%); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-canvas { opacity: 0.6; } }
+
+/* ---------- Hero 'I do both' line ---------- */
+.hero-do {
+  margin-top: 1.1rem;
+  max-width: 44ch;
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.5;
+  color: var(--muted);
+}
+.hero-do strong { color: var(--copper); font-weight: 600; }
+
+/* ---------- Three-things intro line ---------- */
+.three-do {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 56ch;
+}
+.three-do strong { color: var(--text); font-weight: 500; }
+.three-do strong { color: var(--copper); }
+
+/* ---------- Pillar card living canvases (hover-triggered, top-right) ---------- */
+.pillar { overflow: hidden; }
+.pillar-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;      /* covers zones 2,3,4 (from ~25% across to the right edge) */
+  height: 58%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+  -webkit-mask-image: radial-gradient(100% 100% at 80% 6%, #000 45%, transparent 92%);
+  mask-image: radial-gradient(100% 100% at 80% 6%, #000 45%, transparent 92%);
+}
+.pillar-canvas.viz-on { opacity: 1; }
+.pillar > *:not(.pillar-canvas) { position: relative; z-index: 1; }
+
+/* ---------- Underlined phrase (real underline, not highlight) ---------- */
+.u-line {
+  text-decoration: underline;
+  text-decoration-color: var(--amber);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Hero reordered: small lead line, LARGE statement below ---------- */
+.hero-lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.5;
+  max-width: 40ch;
+  margin: 0;
+  color: var(--muted);
+}
+.hero-lead strong { color: var(--text); font-weight: 600; }
+.hero-statement {
+  margin: 0;
+  max-width: 20ch;
+  line-height: 1.05;
+  /* same size as the original hero H1 */
+}
+.hero-statement .ul-word { position: relative; display: inline-block; white-space: nowrap; }

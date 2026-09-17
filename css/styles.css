@@ -398,7 +398,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
@@ -407,7 +407,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .hero-photo-col { order: -1; max-width: 300px; }
 }
 
-.hero-photo-col { max-width: 340px; margin-left: auto; }
+.hero-photo-col { max-width: 440px; margin-left: auto; }
+@media (max-width: 900px) {
+  .hero-photo-col { order: -1; max-width: min(340px, 82vw); margin: 0 auto; }
+}
 
 .hero h1 { margin: 0.75rem 0 1.5rem; max-width: 16ch; }
 

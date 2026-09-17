@@ -19,14 +19,14 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo" aria-label="Nir Hermelin — home">Nir Hermelin<em>.</em></a>
+      <a href="index.html" class="logo logo-lockup" aria-label="Nir Hermelin — Regulated Strategy — home"><img src="images/rs-logo.png" alt="" class="logo-badge" width="34" height="45"><span>Nir Hermelin<em>.</em></span></a>
       <button class="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="regulated-strategy.html">Regulated Strategy</a></li>
+        <li><a href="regulated-strategy.html">Method</a></li>
         <li class="has-sub">
           <button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>
           <ul class="submenu" id="wwmSub">
@@ -45,22 +45,21 @@
   <main id="main">
 
     <!-- ============ HERO ============ -->
-    <section class="hero field" aria-label="Introduction">
+    <section class="hero field hero-viz" aria-label="Introduction">
+      <canvas id="heroViz" class="hero-canvas" aria-hidden="true"></canvas>
       <div class="container">
         <div class="hero-grid">
           <div class="hero-inner">
-            <h1>You know what to do.<br>Let’s make it <span class="ul-word"><em>real.</em><svg class="hand-line drawn" viewBox="0 0 120 14" aria-hidden="true" preserveAspectRatio="none"><path d="M2 9 C 25 3, 45 12, 65 7 S 100 3, 118 8"/></svg></span></h1>
-            <p class="hero-sub">
-              I work with entrepreneurs who want a <mark>better business without compromising their life</mark> to get it.
-            </p>
-            <div class="hero-ctas" style="margin-top:1.5rem;">
+            <h1 class="hero-statement">Serious business.<br><span class="ul-word"><em>Nervous system included.</em><svg class="hand-line drawn" viewBox="0 0 120 14" aria-hidden="true" preserveAspectRatio="none"><path d="M2 9 C 25 3, 45 12, 65 7 S 100 3, 118 8"/></svg></span></h1>
+            <p class="hero-lead" style="margin-top:1.75rem;">I help entrepreneurs build <strong>ambitious businesses without abandoning themselves</strong> along the way.</p>
+            <div class="hero-ctas" style="margin-top:1.75rem;">
               <a href="work-with-me.html" class="btn btn-primary btn-lg">Work with me <span class="arrow" aria-hidden="true">→</span></a>
               <a href="regulated-strategy.html" class="btn btn-ghost btn-lg">See how it works</a>
             </div>
           </div>
           <div class="hero-photo-col">
             <div class="hero-photo">
-              <img src="images/nir-hero.jpg" alt="Nir Hermelin" width="691" height="1008" loading="eager">
+              <img src="images/nir-profile.jpg" alt="Nir Hermelin" width="800" height="800" loading="eager">
             </div>
           </div>
         </div>
@@ -70,24 +69,24 @@
     <!-- ============ THREE THINGS ============ -->
     <section aria-labelledby="three-heading">
       <div class="container">
-        <p class="eyebrow reveal">Three things stay in the room</p>
-        <h2 id="three-heading" class="reveal" style="margin-bottom:2.5rem;">Business. Nervous system. AI.</h2>
+        <h2 id="three-heading" class="reveal">Business. Nervous system. AI.</h2>
+        <p class="three-do reveal" style="--d:0.05s; margin-bottom:2.5rem;">Most business coaches fix the strategy.<br>Most inner work skips the profit &amp; loss.<br><strong>I do both… and I’m slightly obsessed with AI.</strong></p>
         <div class="pillars">
-          <article class="pillar reveal" data-tone="copper" style="--d:0s">
+          <article class="pillar reveal" data-tone="copper" style="--d:0s"><canvas class="pillar-canvas" data-viz="business" aria-hidden="true"></canvas>
             <div class="pillar-glyph" aria-hidden="true">
               <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 40 L18 26 L27 33 L46 12"/><path d="M36 12 H46 V22"/><path d="M6 46 H46" opacity=".4"/></svg>
             </div>
             <h3>Business</h3>
             <p>The offer, the message, the price, the sales conversation, the team. Sometimes you just need a better strategy. We start there.</p>
           </article>
-          <article class="pillar reveal" data-tone="sage" style="--d:0.12s">
+          <article class="pillar reveal" data-tone="sage" style="--d:0.12s"><canvas class="pillar-canvas" data-viz="mycelium" aria-hidden="true"></canvas>
             <div class="pillar-glyph" aria-hidden="true">
               <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 28 C 10 28, 12 14, 18 14 S 24 40, 30 40 S 36 18, 42 18 S 46 28, 48 28"/></svg>
             </div>
             <h3>Nervous system</h3>
             <p>A good strategy can ask for visibility, uncertainty, conflict, letting go. We get curious about that.</p>
           </article>
-          <article class="pillar reveal" data-tone="amber" style="--d:0.24s">
+          <article class="pillar reveal" data-tone="amber" style="--d:0.24s"><canvas class="pillar-canvas" data-viz="ai" aria-hidden="true"></canvas>
             <div class="pillar-glyph" aria-hidden="true">
               <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="26" cy="26" r="7"/><path d="M26 6 V13 M26 39 V46 M6 26 H13 M39 26 H46"/><path d="M12 12 L17 17 M35 35 L40 40 M40 12 L35 17 M17 35 L12 40" opacity=".5"/></svg>
             </div>
@@ -103,8 +102,8 @@
       <div class="container">
         <h2 id="principle-heading" class="display reveal"><span class="tagline-line">Ambitious enough for the business.</span><br><span class="tagline-line"><em>Safe enough for the nervous system.</em></span></h2>
         <div class="principle-pair reveal" style="--d:0.1s">
-          <p>Not so safe that nothing stretches you. Not so hard that you bulldoze every signal your body sends.</p>
-          <p><strong>The useful place is the edge:</strong> a real move, sized so you can stay with it, learn, recover, and go again.</p>
+          <p><strong>First, the business has to be right.</strong> The offer, the pricing, the positioning, the sales process, the delegation, the numbers. I’ve built and advised companies for fifteen years, so we work the commercial problem properly, not as a warm-up to the “real” inner work. If the strategy is weak, no amount of calm fixes it.</p>
+          <p><strong>Then we deal with what stops you doing it.</strong> Because you can know the right move and still not make it. The goal isn’t permanent calm, business needs activation, it’s finding the edge where you can act on the smart decision without disappearing, flooding, or losing the next week to recovery.</p>
         </div>
       </div>
     </section>
@@ -119,9 +118,9 @@
             <p class="eyebrow reveal">Between knowing and doing</p>
             <h2 id="gap-heading" class="reveal">The gap between knowing and doing.</h2>
             <ul class="gap-list reveal" style="--d:0.1s">
-              <li>You can understand that you should raise the price and still rewrite the proposal six times.</li>
-              <li>You can know you need to delegate and somehow keep becoming the bottleneck.</li>
-              <li>You can have a perfectly sensible content plan and publish nothing for a year.</li>
+              <li>You’ve edited the proposal three times, and still haven’t sent it.</li>
+              <li>You’ve hired people, and you’re still the bottleneck.</li>
+              <li>There’s a great content plan, and nothing is published.</li>
             </ul>
             <span class="aside-note reveal" style="--d:0.15s">I know that last one personally.</span>
             <p class="muted reveal" style="--d:0.2s">
@@ -224,44 +223,40 @@
     <section aria-labelledby="ways-heading">
       <div class="container">
         <p class="eyebrow reveal">Ways to work together</p>
-        <h2 id="ways-heading" class="reveal" style="margin-bottom:2.5rem;">Four ways in. Each one leaves something usable in the business.</h2>
+        <h2 id="ways-heading" class="reveal" style="margin-bottom:2.5rem;">How we can work together.</h2>
 
         <p class="ways-group-label reveal">One on one</p>
         <div class="offers offers-2">
-          <article class="offer reveal" style="--d:0s">
-            <span class="offer-kicker">1:1 · 90 minutes</span>
+          <a href="session.html" class="offer reveal" style="--d:0s; color:inherit;">
+            <p class="offer-meta"><span>One on one</span><span>90 minutes</span><span class="price">US$275</span></p>
             <h3>The Next Move Session</h3>
-            <p class="offer-meta"><span>90 minutes</span><span class="price">US$275</span></p>
-            <p>One real business question. Separate the strategic problem from the pressure around it, use AI where it helps, and leave with a meaningful next move.</p>
-            <a href="session.html" class="btn btn-ghost">Details <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="offer reveal" style="--d:0.12s">
+            <p>One real business question. We separate the strategic problem from the pressure around it, use AI where it helps, and leave with a commercially meaningful next move.</p>
+            <span class="btn btn-ghost">See details <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a href="advisory.html" class="offer reveal" style="--d:0.12s; color:inherit;">
             <span class="founding">Founding price</span>
-            <span class="offer-kicker">1:1 · 12 weeks</span>
+            <p class="offer-meta"><span>One on one</span><span>12 weeks</span></p>
             <h3>Regulated Strategy Advisory</h3>
-            <p class="offer-meta"><span>1:1</span><span>12 weeks</span></p>
-            <p>Private work for a bigger question: positioning, marketing, delegation, operating capacity or another consequential move. Strategy, implementation and the patterns that appear when the plan becomes real.</p>
-            <a href="advisory.html" class="btn btn-ghost">Details <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
+            <p>Private work for a bigger business problem: offer and positioning, marketing, delegation, operating capacity or another consequential move. Strategy, implementation and the patterns that appear when the plan becomes real.</p>
+            <span class="btn btn-ghost">See details <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
         </div>
 
         <p class="ways-group-label reveal" style="margin-top:3rem;">Groups</p>
         <div class="offers offers-2">
-          <article class="offer reveal" style="--d:0s">
-            <span class="offer-kicker">Group · 90 minutes</span>
+          <a href="clinic.html" class="offer reveal" style="--d:0s; color:inherit;">
+            <p class="offer-meta"><span>Group</span><span>90 minutes, live</span><span class="price">US$89</span></p>
             <h3>The Offer Clinic</h3>
-            <p class="offer-meta"><span>90 minutes, live</span><span class="price">US$89</span></p>
             <p>Bring the offer you keep quietly reworking. Leave with a version clear enough to put in front of a real buyer, and one real test to run this week.</p>
-            <a href="clinic.html" class="btn btn-ghost">Details <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="offer featured reveal" style="--d:0.12s">
+            <span class="btn btn-ghost">See details <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a href="lab.html" class="offer featured reveal" style="--d:0.12s; color:inherit;">
             <span class="founding">Founding cohort</span>
-            <span class="offer-kicker">Group · 6 weeks</span>
-            <h3>The Next Move Lab: Offer to Market</h3>
             <p class="offer-meta"><span>Group</span><span>6 weeks</span><span>5–8 people</span></p>
-            <p>Take expertise that is already real and turn it into an offer you can explain, price, build and put in front of actual buyers. Strategy, AI build-work and nervous-system-aware coaching in the same room.</p>
-            <a href="lab.html" class="btn btn-primary">Details <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
+            <h3>The Next Move Lab: Offer to Market</h3>
+            <p>Turn expertise that is already real into an offer you can explain, price, build and put in front of actual buyers. Strategy, AI build-work and nervous-system-aware coaching in the same room.</p>
+            <span class="btn btn-primary">See details <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
         </div>
 
         <p class="reveal" style="margin-top:2.5rem; text-align:center;">
@@ -344,12 +339,14 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Nir Hermelin</span>
+        <span>© <span data-year>2026</span> Regulated Strategy &middot; founded by Nir Hermelin</span>
         <span class="wink">Built with a regulated-enough nervous system and a lot of AI.</span>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/hero-viz.js"></script>
+  <script src="js/pillar-viz.js"></script>
 </body>
 </html>
