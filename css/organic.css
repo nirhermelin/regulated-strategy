@@ -954,3 +954,31 @@ mark {
   /* same size as the original hero H1 */
 }
 .hero-statement .ul-word { position: relative; display: inline-block; white-space: nowrap; }
+
+/* ---------- Mobile hero: let the italic phrase wrap ----------
+   Placed at end of file so it overrides the earlier
+   ".hero-statement .ul-word { white-space: nowrap }" rule. */
+@media (max-width: 600px) {
+  .hero-statement { max-width: 100%; }
+  .hero-statement .ul-word { white-space: normal; display: inline; }
+}
+
+/* ---------- Mobile: let long uppercase eyebrows wrap ----------
+   Uppercase + wide letter-spacing on a long eyebrow (e.g. the summit
+   page) can exceed a narrow viewport because inline-flex won't wrap.
+   Allow wrapping and let the accent line sit above the text. */
+@media (max-width: 600px) {
+  .eyebrow { flex-wrap: wrap; max-width: 100%; }
+}
+
+/* ---------- Flex hero: let the container shrink on small screens ----------
+   .hero is display:flex, so its .container child kept min-width:auto and
+   could exceed a narrow viewport (seen on the summit page). Allow it to
+   shrink, and cap the container to the viewport as a safety net. */
+.hero > .container { min-width: 0; }
+.container { max-width: min(var(--max-w), 100%); }
+
+/* Grid/flex hero children default to min-width:auto and can refuse to
+   shrink below their content, pushing past a narrow viewport. Let them. */
+.hero-grid, .hero-inner { min-width: 0; }
+.hero-grid { max-width: 100%; }

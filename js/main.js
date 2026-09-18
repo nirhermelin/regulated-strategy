@@ -20,61 +20,69 @@
     setTimeout(hideLoader, 2500); // never trap a visitor behind a loader
   }
 
-  /* ---------- Nav: solid on scroll ---------- */
-  var nav = document.querySelector(".nav");
-  function onScrollNav() {
-    if (!nav) return;
-    nav.classList.toggle("scrolled", window.scrollY > 40);
-  }
-  onScrollNav();
-  window.addEventListener("scroll", onScrollNav, { passive: true });
+  /* ---------- Nav behaviour ----------
+     The header markup is injected by includes.js. We attach behaviour
+     once it exists: either on the "site:includes-ready" event, or (if
+     a page still has hard-coded nav, e.g. sovereign-reset.html) right now.
+  */
+  var navReady = false;
+  function setupNav() {
+    if (navReady) return;
+    var nav = document.querySelector(".nav");
+    if (!nav) return;            // header not present yet; wait for the event
+    navReady = true;
 
-  /* ---------- Mobile menu ---------- */
-  var toggle = document.querySelector(".nav-toggle");
-  var links = document.querySelector(".nav-links");
-  if (toggle && links) {
-    toggle.addEventListener("click", function () {
-      var open = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.classList.toggle("menu-open", open);
-    });
-    links.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        links.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
+    /* Nav: solid on scroll */
+    function onScrollNav() {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }
+    onScrollNav();
+    window.addEventListener("scroll", onScrollNav, { passive: true });
+
+    /* Mobile menu */
+    var toggle = nav.querySelector(".nav-toggle");
+    var links = nav.querySelector(".nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", function () {
+        var open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.classList.toggle("menu-open", open);
+      });
+      links.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        });
+      });
+    }
+
+    /* Nav dropdown (Work With Me submenu) */
+    var mqDesktop = window.matchMedia("(min-width: 901px)");
+    nav.querySelectorAll(".has-sub").forEach(function (item) {
+      var subToggle = item.querySelector(".sub-toggle");
+      if (!subToggle) return;
+
+      subToggle.addEventListener("click", function () {
+        if (mqDesktop.matches) {
+          window.location.href = item.querySelector(".submenu a").getAttribute("href");
+        }
+      });
+
+      subToggle.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown" && mqDesktop.matches) {
+          e.preventDefault();
+          var first = item.querySelector(".submenu a");
+          if (first) first.focus();
+        }
+      });
+      item.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { subToggle.focus(); item.classList.remove("sub-open"); }
       });
     });
   }
-
-  /* ---------- Nav dropdown (Work With Me submenu) ---------- */
-  var mqDesktop = window.matchMedia("(min-width: 901px)");
-  document.querySelectorAll(".has-sub").forEach(function (item) {
-    var subToggle = item.querySelector(".sub-toggle");
-    if (!subToggle) return;
-
-    // On desktop, hover/focus is handled by CSS. The button click on desktop
-    // goes to the overview page; on mobile it expands the sublist in place.
-    subToggle.addEventListener("click", function (e) {
-      if (mqDesktop.matches) {
-        // Desktop: clicking the label goes to the overview page.
-        window.location.href = item.querySelector(".submenu a").getAttribute("href");
-      }
-      // Mobile: the sublist is already shown in the overlay, so do nothing.
-    });
-
-    // Desktop keyboard: open on ArrowDown, close on Escape.
-    subToggle.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowDown" && mqDesktop.matches) {
-        e.preventDefault();
-        var first = item.querySelector(".submenu a");
-        if (first) first.focus();
-      }
-    });
-    item.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") { subToggle.focus(); item.classList.remove("sub-open"); }
-    });
-  });
+  document.addEventListener("site:includes-ready", setupNav);
+  setupNav(); // in case a page has hard-coded nav already in the DOM
 
   /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll(".reveal");

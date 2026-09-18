@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Hidden / non-public pages
+Disallow: /summit/
+Disallow: /free-reset
+Disallow: /free-reset.html
+Disallow: /sovereign-reset
+Disallow: /sovereign-reset.html
+
+Sitemap: https://nirhermelin.com/sitemap.xml
