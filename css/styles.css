@@ -255,7 +255,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   background: rgba(250, 246, 239, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   border-bottom-color: var(--border);
 }
 .nav-inner {
@@ -311,10 +311,17 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .logo-name { font-size: 1.02rem; }
   .logo-brand { font-size: 0.56rem; letter-spacing: 0.13em; }
 }
-/* When the bar shrinks on scroll, collapse to a single line so the
-   two-line lockup can't get clipped by the reduced header height. */
-.nav.scrolled .logo-brand { display: none; }
-.nav.scrolled .logo-words { gap: 0; }
+/* Keep the full two-line lockup visible when scrolled. Shrink it slightly
+   instead of hiding the brand line, and keep the slim bar tall enough for
+   both lines so the badge is never clipped. */
+.nav.scrolled .logo-name { font-size: 1.02rem; }
+.nav.scrolled .logo-brand { font-size: 0.54rem; }
+.nav.scrolled .logo-badge { width: 27px; height: 35px; }
+
+/* About hero: smaller portrait on mobile so the headline fits on screen */
+@media (max-width: 900px) {
+  .hero-small .hero-photo-col { max-width: min(238px, 58vw); }
+}
 
 .nav-links {
   display: flex;
@@ -389,7 +396,13 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .nav-toggle { display: block; }
   .nav-links {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     background: #faf6ef;
     flex-direction: column;
     justify-content: flex-start;
