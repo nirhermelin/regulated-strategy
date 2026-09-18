@@ -46,7 +46,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: hidden; }
 
 body {
   background: var(--bg);
@@ -311,6 +311,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .logo-name { font-size: 1.02rem; }
   .logo-brand { font-size: 0.56rem; letter-spacing: 0.13em; }
 }
+/* When the bar shrinks on scroll, collapse to a single line so the
+   two-line lockup can't get clipped by the reduced header height. */
+.nav.scrolled .logo-brand { display: none; }
+.nav.scrolled .logo-words { gap: 0; }
 
 .nav-links {
   display: flex;

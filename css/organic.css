@@ -888,7 +888,7 @@ mark {
 }
 .hero-viz .container { position: relative; z-index: 1; }
 @media (max-width: 900px) {
-  .hero-canvas { width: 100%; opacity: 0.35; -webkit-mask-image: radial-gradient(80% 60% at 50% 30%, #000 50%, transparent 100%); mask-image: radial-gradient(80% 60% at 50% 30%, #000 50%, transparent 100%); }
+  .hero-canvas { width: 100%; opacity: 0.5; -webkit-mask-image: radial-gradient(95% 70% at 50% 16%, #000 55%, transparent 100%); mask-image: radial-gradient(95% 70% at 50% 16%, #000 55%, transparent 100%); }
 }
 @media (prefers-reduced-motion: reduce) { .hero-canvas { opacity: 0.6; } }
 
