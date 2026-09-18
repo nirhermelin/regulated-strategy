@@ -279,6 +279,39 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 .logo em { font-style: normal; color: var(--amber); }
 .logo:hover em { color: var(--copper); }
 
+/* ---------- Brand lockup: badge + two-line wordmark ---------- */
+.logo-lockup { gap: 0.6rem; }
+.logo-lockup .logo-badge {
+  flex: none;
+  align-self: center;
+}
+.logo-words {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.18rem;
+}
+.logo-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+/* To go standalone later: swap the font-size / letter-spacing / color
+   between .logo-name and .logo-brand so the brand leads and the name
+   becomes the small line. */
+.logo-brand {
+  font-family: var(--font-head);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+@media (max-width: 480px) {
+  .logo-name { font-size: 1.02rem; }
+  .logo-brand { font-size: 0.56rem; letter-spacing: 0.13em; }
+}
+
 .nav-links {
   display: flex;
   align-items: center;

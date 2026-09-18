@@ -17,14 +17,14 @@
   /* ---------- The menu (edit links here, once) ---------- */
   var HEADER_HTML =
     '<div class="nav-inner">' +
-      '<a href="index.html" class="logo logo-lockup" aria-label="Nir Hermelin — Regulated Strategy — home"><img src="images/rs-logo.png" alt="" class="logo-badge" width="34" height="45"><span>Nir Hermelin<em>.</em></span></a>' +
+      '<a href="index.html" class="logo logo-lockup" aria-label="Nir Hermelin — Regulated Strategy — home"><img src="images/rs-logo.png" alt="" class="logo-badge" width="30" height="39"><span class="logo-words"><span class="logo-name">Nir Hermelin<em>.</em></span><span class="logo-brand">Regulated Strategy</span></span></a>' +
       '<button class="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="navLinks">' +
         '<span></span><span></span><span></span>' +
       '</button>' +
       '<ul class="nav-links" id="navLinks">' +
         '<li><a href="index.html" data-match="index.html">Home</a></li>' +
         '<li><a href="about.html" data-match="about.html">About</a></li>' +
-        '<li><a href="regulated-strategy.html" data-match="regulated-strategy.html">Method</a></li>' +
+        '<li><a href="regulated-strategy.html" data-match="regulated-strategy.html">Regulated Strategy</a></li>' +
         '<li class="has-sub" data-sub-match="work-with-me.html,clinic.html,session.html,lab.html,advisory.html">' +
           '<button class="sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wwmSub">Work With Me <span class="caret" aria-hidden="true"></span></button>' +
           '<ul class="submenu" id="wwmSub">' +
