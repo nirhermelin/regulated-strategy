@@ -46,7 +46,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 body {
   background: var(--bg);
@@ -255,7 +255,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   background: rgba(250, 246, 239, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 0.6rem 0;
+  padding: 0.75rem 0;
   border-bottom-color: var(--border);
 }
 .nav-inner {
@@ -278,44 +278,6 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 }
 .logo em { font-style: normal; color: var(--amber); }
 .logo:hover em { color: var(--copper); }
-
-/* ---------- Brand lockup: badge + two-line wordmark ---------- */
-.logo-lockup { gap: 0.6rem; }
-.logo-lockup .logo-badge {
-  flex: none;
-  align-self: center;
-}
-.logo-words {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 0.18rem;
-}
-.logo-name {
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-/* To go standalone later: swap the font-size / letter-spacing / color
-   between .logo-name and .logo-brand so the brand leads and the name
-   becomes the small line. */
-.logo-brand {
-  font-family: var(--font-head);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--amber);
-}
-@media (max-width: 480px) {
-  .logo-name { font-size: 1.02rem; }
-  .logo-brand { font-size: 0.56rem; letter-spacing: 0.13em; }
-}
-/* Keep the full two-line lockup visible and unchanged when scrolled. */
-/* About hero: smaller portrait on mobile so the headline fits on screen */
-@media (max-width: 900px) {
-  .hero-small .hero-photo-col { max-width: min(238px, 58vw); }
-}
 
 .nav-links {
   display: flex;
@@ -390,13 +352,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
   .nav-toggle { display: block; }
   .nav-links {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    inset: 0;
     background: #faf6ef;
     flex-direction: column;
     justify-content: flex-start;
@@ -452,11 +408,8 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 }
 
 .hero-photo-col { max-width: 440px; margin-left: auto; }
-/* Homepage hero photo ~70% so it doesn't crowd the headline */
-.hero:not(.hero-small) .hero-photo-col { max-width: 308px; }
 @media (max-width: 900px) {
   .hero-photo-col { order: -1; max-width: min(340px, 82vw); margin: 0 auto; }
-  .hero:not(.hero-small) .hero-photo-col { max-width: min(238px, 62vw); }
 }
 
 .hero h1 { margin: 0.75rem 0 1.5rem; max-width: 16ch; }
